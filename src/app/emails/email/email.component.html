@@ -1,0 +1,29 @@
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+  <mat-grid-list cols="1" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <input type="hidden" formControlName="$id">
+
+        <mat-form-field>
+          <input formControlName="destinatary" matInput placeholder="Destinatary">
+          <mat-error>Destinatary is neccesary</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input formControlName="description" matInput placeholder="Description">
+          <mat-error>Description is neccesary</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <textarea formControlName="content" matInput placeholder="Content"></textarea>
+        </mat-form-field>
+
+        <div class="button-row">
+            <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Send</button>
+          </div>
+      </div>
+
+      </mat-grid-tile>
+  
+  </mat-grid-list>
+</form>
